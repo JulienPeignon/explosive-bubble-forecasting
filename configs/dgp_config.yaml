@@ -1,0 +1,36 @@
+series:
+  n: 10000
+  alpha: 1.0
+  beta: 0.0
+  sigma: 0.5
+
+processes:
+  mar01:
+    kind: stable_mar
+    order: [0, 1]
+    causal: []
+    noncausal: [0.9]
+    closed_form: true
+  mar02:
+    kind: stable_mar
+    order: [0, 2]
+    causal: []
+    noncausal: [0.7, 0.1]
+    closed_form: false
+  mar11:
+    kind: stable_mar
+    order: [1, 1]
+    causal: [0.1]
+    noncausal: [0.9]
+    closed_form: false
+  ms_bubble:
+    kind: ms_bubble
+    closed_form: true
+    params:
+      phi0: 0.7
+      sigma_b: 1.0
+      q: 0.0025
+      delta: 4.0
+      rho: 1.02
+      sigma_e: 1.0
+      hazard: 0.05

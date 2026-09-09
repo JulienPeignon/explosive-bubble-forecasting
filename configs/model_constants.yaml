@@ -1,0 +1,26 @@
+# Fixed (non-tuned) constants for every forecast-method baseline.
+
+search_space:
+  lr_grid: [1.0e-4, 2.0e-4, 4.0e-4, 6.0e-4, 8.0e-4, 1.0e-3, 2.0e-3, 4.0e-3, 6.0e-3, 8.0e-3, 1.0e-2]
+  width_grid: [64, 128, 256, 512]
+  depth_range: [1, 5]
+
+flexzboost:
+  max_basis: 40
+  bump_grid: {start: 0.0, stop: 0.2, num: 9}
+  sharpen_grid: {start: 0.5, stop: 2.0, num: 7}
+  lr_grid: [6.0e-3, 8.0e-3, 1.0e-2, 2.0e-2, 4.0e-2, 6.0e-2, 8.0e-2, 1.0e-1, 2.0e-1, 4.0e-1, 6.0e-1]
+
+kcde:
+  bandwidth_grid: [0.10, 0.15, 0.20, 0.30, 0.50, 0.75, 1.00, 1.50, 2.00]
+  kernels: [gaussian, epanechnikov, tricube]
+  chunk_size: 512
+
+flow:
+  bins_grid: [4, 8, 16]
+  transforms_range: [1, 5]
+  chunk_size: 512
+
+conformal:
+  alpha: 0.05
+  aci_gammas: [0.0, 0.01, 0.05]
